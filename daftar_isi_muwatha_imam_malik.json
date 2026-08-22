@@ -1,0 +1,75 @@
+[
+  { "kitab_no": 1, "nama": "Waktu-Waktu Sholat", "hal_mulai": 3, "bab": [
+    { "no": 1, "judul": "Waktu shalat", "hal": 3 },
+    { "no": 2, "judul": "Waktu Jum'at", "hal": 7 },
+    { "no": 3, "judul": "Yang mendapati satu rakaat Shalat", "hal": 8 }
+  ]},
+  { "kitab_no": 2, "nama": "Thaharah", "hal_mulai": 13, "bab": [
+    { "no": 1, "judul": "Beberapa hal yang perlu diperhatikan ketika wudhu", "hal": 13 }
+  ]},
+  { "kitab_no": 3, "nama": "Adzan", "hal_mulai": 46, "bab": [
+    { "no": 1, "judul": "Panggilan shalat (Adzan)", "hal": 46 },
+    { "no": 2, "judul": "Apakah panggilan (adzan) dihari jumat dilakukan sebelum masuknya waktu", "hal": 48 }
+  ]},
+  { "kitab_no": 4, "nama": "Jenazah", "hal_mulai": 157, "bab": []},
+  { "kitab_no": 5, "nama": "Zakat", "hal_mulai": 173, "bab": []},
+  { "kitab_no": 6, "nama": "Puasa", "hal_mulai": 187, "bab": []},
+  { "kitab_no": 7, "nama": "I'tikaf", "hal_mulai": 203, "bab": []},
+  { "kitab_no": 8, "nama": "Haji", "hal_mulai": 206, "bab": []},
+  { "kitab_no": 9, "nama": "Jihad", "hal_mulai": 280, "bab": []},
+  { "kitab_no": 10, "nama": "Nadzar dan Iman", "hal_mulai": 300, "bab": []},
+  { "kitab_no": 11, "nama": "Sembelihan kurban", "hal_mulai": 306, "bab": []},
+  { "kitab_no": 12, "nama": "Buruan", "hal_mulai": 314, "bab": []},
+  { "kitab_no": 13, "nama": "Aqiqah", "hal_mulai": 317, "bab": []},
+  { "kitab_no": 14, "nama": "Faraidh", "hal_mulai": 318, "bab": []},
+  { "kitab_no": 15, "nama": "Nikah", "hal_mulai": 323, "bab": [
+    { "no": 33, "judul": "Iddah ummu walad jika majikannya meninggal", "hal": 368 },
+    { "no": 34, "judul": "Iddah hamba sahaya yang ditinggal mati majikannya atau suaminya", "hal": 369 },
+    { "no": 35, "judul": "Azl (Coitus Interruptus)", "hal": 370 }
+  ]},
+  { "kitab_no": 16, "nama": "Thalak", "hal_mulai": 339, "bab": []},
+  { "kitab_no": 17, "nama": "Penyusuan", "hal_mulai": 374, "bab": [
+    { "no": 1, "judul": "Menyusui anak kecil", "hal": 374 },
+    { "no": 2, "judul": "Menyusui setelah dewasa", "hal": 378 }
+  ]},
+  { "kitab_no": 18, "nama": "Jual Beli", "hal_mulai": 381, "bab": [
+    { "no": 1, "judul": "Harta budak", "hal": 381 },
+    { "no": 26, "judul": "Menimbun dan menunggu waktu", "hal": 396 }
+  ]},
+  { "kitab_no": 19, "nama": "Pinjaman", "hal_mulai": 405, "bab": [
+    { "no": 1, "judul": "Qiradh (Pemberian Modal usaha dengan sistem bagi laba)", "hal": 405 }
+  ]},
+  { "kitab_no": 20, "nama": "Penyiraman", "hal_mulai": 406, "bab": [
+    { "no": 1, "judul": "Musaaqaat", "hal": 406 }
+  ]},
+  { "kitab_no": 21, "nama": "Sewa Tanah", "hal_mulai": 407, "bab": []},
+  { "kitab_no": 22, "nama": "Syuf'ah", "hal_mulai": 408, "bab": []},
+  { "kitab_no": 23, "nama": "Peradilan", "hal_mulai": 409, "bab": [
+    { "no": 1, "judul": "Anjuran memutuskan perkara dengan adil", "hal": 409 }
+  ]},
+  { "kitab_no": 24, "nama": "Persaksian", "hal_mulai": 410, "bab": []},
+  { "kitab_no": 25, "nama": "Memerdekakan Budak dan Wala'", "hal_mulai": 433, "bab": [
+    { "no": 1, "judul": "Memerdekakan sebagian hak kepemilikan budak", "hal": 433 },
+    { "no": 26, "judul": "Budak Yang Di Merdekakan", "hal": 441 }
+  ]},
+  { "kitab_no": 26, "nama": "Mudabbar", "hal_mulai": 442, "bab": []},
+  { "kitab_no": 27, "nama": "Hukuman Pelanggaran", "hal_mulai": 442, "bab": [
+    { "no": 1, "judul": "Rajam", "hal": 442 },
+    { "no": 9, "judul": "Memotong budak yang melarikan diri dan mencuri", "hal": 454 }
+  ]},
+  { "kitab_no": 28, "nama": "Minuman", "hal_mulai": 459, "bab": [
+    { "no": 1, "judul": "Hukuman masalah Khamar (Minuman keras)", "hal": 459 }
+  ]},
+  { "kitab_no": 29, "nama": "Tebusan", "hal_mulai": 464, "bab": [
+    { "no": 1, "judul": "Masalah DIYAT", "hal": 464 },
+    { "no": 22, "judul": "Diyat saibah dan pencideraannya", "hal": 474 }
+  ]},
+  { "kitab_no": 30, "nama": "Qussamah", "hal_mulai": 474, "bab": [
+    { "no": 1, "judul": "Keluarga korban mengawal mulai qussamah", "hal": 474 }
+  ]},
+  { "kitab_no": 31, "nama": "Lain-lain", "hal_mulai": 476, "bab": [
+    { "no": 1, "judul": "Doa untuk Madinah dan penduduknya", "hal": 476 },
+    { "no": 31, "judul": "Sunnah minum dan mengambil dengan tangan kanan", "hal": 503 },
+    { "no": 90, "judul": "Nama-nama Nabi Shallallahu'alaihiwasallam", "hal": 558 }
+  ]}
+]
