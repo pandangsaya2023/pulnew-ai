@@ -11,7 +11,7 @@
 body { font-family: 'Poppins', sans-serif; background: #f0fdfd; margin:0; padding:15px 0; }
 .container { max-width: 1000px; margin: auto; background: white; padding: 0 15px 15px 15px; min-height: 100vh; display: flex; flex-direction: column; border-radius:16px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); }
 header { text-align:center; padding:20px 10px; background: linear-gradient(135deg, var(--hijau-tua), var(--hijau-gelap)); color:white; border-radius:16px; margin:0 0 20px 0; }
-header.icon { font-size:28px; margin-bottom:5px; } /* TADI TYPO header.icon */
+header.icon { font-size:28px; margin-bottom:5px; }
 header h1 { margin:0; font-size:22px; letter-spacing:2px; font-weight:700; }
 header p { margin:5px 0 0 0; font-size:12px; opacity:0.9; }
 h2 { text-align: center; color: var(--hijau-tua); font-family: 'Amiri', serif; font-size: 24px; margin: 0 0 15px 0; }
@@ -52,7 +52,7 @@ footer { text-align:center; margin-top:30px; padding-top:15px; border-top:1px so
     </select>
   </div>
 
-  <h2 id="judulKitab">Al-Muwatha - Imam Malik</h2> <!-- TADI TYPO Muwatha -->
+  <h2 id="judulKitab">Al-Muwatha - Imam Malik</h2>
 
   <div class="mode-wrap">
     <button class="mode-btn active" id="btnModeBaca" onclick="gantiMode('baca')">📖 Mode Baca</button>
@@ -81,42 +81,51 @@ footer { text-align:center; margin-top:30px; padding-top:15px; border-top:1px so
     <button class="nav-btn" id="btnNext" onclick="nextPage()">Selanjutnya »</button>
   </div>
 
-  <footer>PULNEW MAKTABAH v2.1 | © 2026</footer>
+  <footer>PULNEW MAKTABAH v2.2 | © 2026</footer>
 </div>
 
 <script>
-// DATA KITAB - SESUAI NAMA DI GITHUB KAMU
+// DATA KITAB - UDAH DISESUAIKAN 100% DENGAN GITHUB KAMU
 const dataKitab = {
-  muwattha: {
+  muwatha: {
     nama: "Al-Muwatha - Imam Malik",
-    folder: "images/Kitab Al-Muwatha Imam Malik/",
-    fileAwal: "Kitab Al-Muwattha - Imam Maliki", // SESUAIKAN DENGAN NAMA ASLI DI GITHUB
-    total: 576,
+    baseFolder: "images/Kitab Al-Muwatha Imam Malik/",
+    fileAwal: "Kitab Al-Muwattha - Imam Maliki",
+    total: 579, // kamu punya 579
     json: "daftar-isi-muwatha.json",
-    selisih: 18
+    selisih: 0
   },
   musnad_1: {
     nama: "Musnad Imam Syafi'i - Jilid 1",
-    folder: "images/musnad_imam_syafii_jilid_1/",
-    fileAwal: "Musnad Imam Syafii - Jilid 1 - Said Muhammad Al Lihham", // SESUAIKAN DENGAN NAMA ASLI
+    baseFolder: "images/Musnad_Imam_Syafii_Jilid_1/", // SESUAI NAMA FOLDER DI GITHUB
+    fileAwal: "Musnad Imam Syafii - Jilid 1 - Said Muhammad Al", // NAMA KEPOTONG DI GITHUB
     total: 627,
     json: "daftar-isi-musnad1.json",
     selisih: 0
   },
   musnad_2: {
     nama: "Musnad Imam Syafi'i - Jilid 2",
-    folder: "images/musnad_2/",
-    fileAwal: "Musnad Imam Syafi'i - Jilid 2 - Said Muhammad Al Lihham", // SESUAIKAN DENGAN NAMA ASLI
-    total: 300,
+    baseFolder: "images/Musnad_Imam_Syafii_Jilid_2/", // UBAH INI KALAU UDAH UPLOAD JILID 2
+    fileAwal: "Musnad Imam Syafii - Jilid 2 - Said Muhammad Al", // UBAH INI JUGA
+    total: 300, // GANTI SESUAI TOTAL ASLI
     json: "daftar-isi-musnad2.json",
     selisih: 0
   }
 };
 
-let kitabAktif = "muwattha";
+let kitabAktif = "muwatha";
 let noSekarang = 1;
 let daftarIsi = [];
 let mode = 'baca';
+
+function getFolderMuwatha(hal) {
+    if(hal <= 90) return "1-90/";
+    else if(hal <= 180) return "91-180/";
+    else if(hal <= 270) return "181-270/";
+    else if(hal <= 360) return "271-360/";
+    else if(hal <= 450) return "361-450/";
+    else return "451-576/"; // 451-579
+}
 
 function gantiKitab(){
   kitabAktif = document.getElementById('pilihKitab').value;
@@ -190,9 +199,15 @@ function tampilkan(){
   const kitab = dataKitab[kitabAktif];
   const nomorFile = noSekarang + kitab.selisih;
   let namaFile = `${kitab.fileAwal}_${nomorFile}.jpg`;
+  let folder = kitab.baseFolder;
+
+  // KHUSUS IMAM MALIK PUNYA SUB FOLDER
+  if(kitabAktif === 'muwatha') {
+      folder += getFolderMuwatha(noSekarang);
+  }
 
   // KUNCI UTAMA: ENCODE BIAR SPASI DAN ' AMAN
-  const urlAman = kitab.folder + encodeURIComponent(namaFile);
+  const urlAman = folder + encodeURIComponent(namaFile);
 
   document.getElementById('gambar').src = urlAman;
   document.getElementById('gambar').alt = `Lembar ${noSekarang}`;
