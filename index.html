@@ -81,7 +81,7 @@ footer { text-align:center; margin-top:30px; padding-top:15px; border-top:1px so
     <button class="nav-btn" id="btnNext" onclick="nextPage()">Selanjutnya »</button>
   </div>
 
-  <footer>PULNEW MAKTABAH v2.2 | © 2026</footer>
+  <footer>PULNEW MAKTABAH v2.3 FIX | © 2026</footer>
 </div>
 
 <script>
@@ -91,23 +91,23 @@ const dataKitab = {
     nama: "Al-Muwatha - Imam Malik",
     baseFolder: "images/Kitab Al-Muwatha Imam Malik/",
     fileAwal: "Kitab Al-Muwattha - Imam Maliki",
-    total: 576, // kamu punya 579
+    total: 579,
     json: "daftar-isi-muwatha.json",
-    selisih: 18
+    selisih: 18 // SELISIH HALAMAN CETAK VS LEMBAR FILE
   },
   musnad_1: {
     nama: "Musnad Imam Syafi'i - Jilid 1",
-    baseFolder: "images/Musnad_Imam_Syafii_Jilid_1/", // SESUAI NAMA FOLDER DI GITHUB
-    fileAwal: "Musnad Imam Syafii - Jilid 1 - Said Muhammad Al", // NAMA KEPOTONG DI GITHUB
+    baseFolder: "images/Musnad_Imam_Syafii_Jilid_1/",
+    fileAwal: "Musnad Imam Syafii - Jilid 1 - Said Muhammad Al",
     total: 627,
     json: "daftar-isi-musnad1.json",
     selisih: 0
   },
   musnad_2: {
     nama: "Musnad Imam Syafi'i - Jilid 2",
-    baseFolder: "images/Musnad_Imam_Syafii_Jilid_2/", // UBAH INI KALAU UDAH UPLOAD JILID 2
-    fileAwal: "Musnad Imam Syafii - Jilid 2 - Said Muhammad Al", // UBAH INI JUGA
-    total: 300, // GANTI SESUAI TOTAL ASLI
+    baseFolder: "images/Musnad_Imam_Syafii_Jilid_2/",
+    fileAwal: "Musnad Imam Syafii - Jilid 2 - Said Muhammad Al",
+    total: 300, // GANTI SESUAI TOTAL ASLI NANTI
     json: "daftar-isi-musnad2.json",
     selisih: 0
   }
@@ -117,6 +117,7 @@ let kitabAktif = "muwatha";
 let noSekarang = 1;
 let daftarIsi = [];
 let mode = 'baca';
+let dariDaftarIsi = false; // FLAG PENTING: tandai kalau lompat dari daftar isi
 
 function getFolderMuwatha(hal) {
     if(hal <= 90) return "1-90/";
@@ -124,7 +125,7 @@ function getFolderMuwatha(hal) {
     else if(hal <= 270) return "181-270/";
     else if(hal <= 360) return "271-360/";
     else if(hal <= 450) return "361-450/";
-    else return "451-576/"; // 451-579
+    else return "451-576/";
 }
 
 function gantiKitab(){
@@ -132,6 +133,7 @@ function gantiKitab(){
   const kitab = dataKitab[kitabAktif];
   document.getElementById('judulKitab').innerText = kitab.nama;
   noSekarang = 1;
+  dariDaftarIsi = false;
   loadDaftarIsi();
   tampilkan();
 }
@@ -154,8 +156,7 @@ async function loadDaftarIsi(){
           let a = document.createElement('a');
           a.className = 'daftar-bab';
           a.innerHTML = `<span>Bab ${bab.no}. ${bab.judul}</span><span class="no-hal">Hal ${bab.hal}</span>`;
-          let noLembarFile = bab.hal + kitab.selisih;
-          a.onclick = () => lompatKeLembar(noLembarFile);
+          a.onclick = () => lompatKeLembar(bab.hal); // kirim nomor hal cetak
           kitabDiv.appendChild(a);
         });
       }
@@ -188,8 +189,9 @@ function gantiMode(m){
   }
 }
 
-function lompatKeLembar(hal){
-  noSekarang = hal;
+function lompatKeLembar(halCetak){
+  noSekarang = halCetak; // simpan nomor hal cetak dulu
+  dariDaftarIsi = true; // KASIH TANDA
   gantiMode('baca');
   tampilkan();
   window.scrollTo(0,0);
@@ -197,16 +199,22 @@ function lompatKeLembar(hal){
 
 function tampilkan(){
   const kitab = dataKitab[kitabAktif];
-  const nomorFile = noSekarang + kitab.selisih;
+  let nomorFile = noSekarang;
+
+  // KUNCI: BARU TAMBAH SELISIH KALAU DARI DAFTAR ISI
+  if(dariDaftarIsi){
+    nomorFile = noSekarang + kitab.selisih;
+    dariDaftarIsi = false; // reset flag biar next/prev normal
+  }
+
   let namaFile = `${kitab.fileAwal}_${nomorFile}.jpg`;
   let folder = kitab.baseFolder;
 
   // KHUSUS IMAM MALIK PUNYA SUB FOLDER
   if(kitabAktif === 'muwatha') {
-      folder += getFolderMuwatha(noSekarang);
+      folder += getFolderMuwatha(nomorFile);
   }
 
-  // KUNCI UTAMA: ENCODE BIAR SPASI DAN ' AMAN
   const urlAman = folder + encodeURIComponent(namaFile);
 
   document.getElementById('gambar').src = urlAman;
@@ -222,18 +230,23 @@ function tampilkan(){
 function lompatHalaman(){
   const kitab = dataKitab[kitabAktif];
   let no = parseInt(document.getElementById('inputLompat').value);
-  if(no >= 1 && no <= kitab.total){ noSekarang = no; tampilkan(); }
+  if(no >= 1 && no <= kitab.total){
+    noSekarang = no;
+    dariDaftarIsi = false; // ini lompat manual, bukan dari daftar isi
+    tampilkan();
+  }
   else { alert(`Masukkan nomor 1 - ${kitab.total}`); }
 }
-function prevPage(){ if(noSekarang > 1){ noSekarang--; tampilkan(); } }
+function prevPage(){ if(noSekarang > 1){ noSekarang--; dariDaftarIsi = false; tampilkan(); } }
 function nextPage(){
   const kitab = dataKitab[kitabAktif];
-  if(noSekarang < kitab.total){ noSekarang++; tampilkan(); }
+  if(noSekarang < kitab.total){ noSekarang++; dariDaftarIsi = false; tampilkan(); }
 }
 document.addEventListener('keydown', function(e){ if(e.key === 'ArrowLeft') prevPage(); if(e.key === 'ArrowRight') nextPage(); });
 
 function resetPencarian(){
   noSekarang = 1;
+  dariDaftarIsi = false;
   document.getElementById('inputLompat').value = "";
   tampilkan();
 }
