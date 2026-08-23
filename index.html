@@ -234,9 +234,13 @@ function tampilkan(){
   document.getElementById('noSekarang').innerText = noSekarang;
   document.getElementById('infoLembar').innerHTML = `Lembar <span id="noSekarang">${noSekarang}</span> / ${kitab.total}`;
 
-  // BATASNYA IKUT BATAS BAB KALAU DARI DAFTAR ISI
-  document.getElementById('btnPrev').disabled = noSekarang === 1;
-  document.getElementById('btnNext').disabled = noSekarang >= batasAkhirModeBaca;
+  // BIAR TOMBOL SELALU AKTIF GAK ADA BATAS
+  document.getElementById('btnPrev').disabled = false;
+  document.getElementById('btnNext').disabled = false;
+  
+  // TOMBOL ADA BATASNYA IKUT BATAS BAB KALAU DARI DAFTAR ISI
+  //document.getElementById('btnPrev').disabled = noSekarang === 1;
+  //document.getElementById('btnNext').disabled = noSekarang >= batasAkhirModeBaca;
 
   document.getElementById('inputLompat').max = kitab.total;
   document.getElementById('inputLompat').placeholder = `Lompat ke lembar 1-${kitab.total}`;
@@ -262,7 +266,7 @@ function prevPage(){
 
 function nextPage(){
   const kitab = dataKitab[kitabAktif];
-  if(noSekarang < batasAkhirModeBaca){
+  if(noSekarang <  kitab.total){ //batasAkhirModeBaca){
     noSekarang++;
     tampilkan();
   }
