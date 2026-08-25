@@ -10,38 +10,6 @@
 * { box-sizing: border-box; }
 body { font-family: 'Poppins', sans-serif; background: #f0fdfd; margin:0; padding:15px 0; }
 
-header { 
-    text-align:center;
-    padding:12px 20px; /* DULU 20px, sekarang 12px atas bawah */
-    background: linear-gradient(135deg, var(--hijau-tua), var(--hijau-gelap)); 
-    border-radius: 15px;
-    margin-bottom: 10px; /* TAMBAH INI biar nempel ke card */
-}
-
-header .icon img { 
-    width: 60px; /* DULU 70px, kecilin dikit */
-    height: 60px; 
-    object-fit: contain;
-    background: white;
-    padding: 5px; /* DULU 6px */
-    border-radius: 50%;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.15);
-    margin-bottom: 5px; /* DULU 10px */
-}
-
-header h1 { 
-    font-size:22px; 
-    margin-bottom:4px; /* DULU 5px */
-    letter-spacing:2px; 
-    font-weight:700;
-}
-
-header p { 
-    margin:0; /* DULU 5px 0 0 */
-    font-size:12px; 
-    opacity:0.9; 
-}
-
 .container { 
     max-width: 1000px; 
     margin: auto; 
@@ -50,21 +18,21 @@ header p {
     min-height: 100vh;
 }
 
-/*.container { max-width: 1000px; margin: auto; background: white; padding: 0 15px 15px 15px; min-height: 100vh; display: flex; flex-direction: column; border-radius:16px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); }
-header { text-align:center; padding:20px 10px; background: linear-gradient(135deg, var(--hijau-tua), var(--hijau-gelap)); color:white; border-radius:16px; margin:0 0 20px 0; }
+/*.container { max-width: 1000px; margin: auto; background: white; padding: 0 15px 15px 15px; min-height: 100vh; display: flex; flex-direction: column; border-radius:16px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); }*/
+header { text-align:center; padding:12px 20px; background: linear-gradient(135deg, var(--hijau-tua), var(--hijau-gelap)); color:white; border-radius:15px; margin:0 0 10px 0; }
 header.icon { font-size:28px; margin-bottom:5px; }
-header h1 { margin:0; font-size:22px; letter-spacing:2px; font-weight:700; }
-header p { margin:5px 0 0 0; font-size:12px; opacity:0.9; }
+header h1 { margin-bottom:4px; font-size:22px; letter-spacing:2px; font-weight:700; }
+header p { margin:0px 0 0 0; font-size:12px; opacity:0.9; }
 header .icon img { 
-    width: 70px; 
-    height: 70px; 
+    width: 60px; 
+    height: 60px; 
     object-fit: contain;
     background: white; /* kasih background putih */
-    padding: 6px; /* kasih jarak */
+    padding: 5px; /* kasih jarak */
     border-radius: 50%; /* bikin bulat */
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2); /* kasih bayangan */
-    margin-bottom: 10px;
-}*/
+    box-shadow: 0 3px 10px rgba(0,0,0,0.15); /* kasih bayangan */
+    margin-bottom: 5px;
+}
 
 h2 { text-align: center; color: var(--hijau-tua); font-family: 'Amiri', serif; font-size: 24px; margin: 0 0 15px 0; }
 .card { background:white; padding:16px; border-radius:16px; border:1px solid #ccfbf1; box-shadow: 0 4px 12px rgba(0,0,0,0.05); margin-bottom:15px; }
