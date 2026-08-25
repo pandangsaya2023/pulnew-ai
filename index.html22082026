@@ -100,7 +100,7 @@ const dataKitab = {
     baseFolder: "images/Musnad_Imam_Syafii_Jilid_1/",
     fileAwal: "Musnad_Imam_Syafii_Jilid_1",
     total: 627,
-    json: "daftar-isi-jilid1.json",
+    json: "daftar_isi_jilid1.json",
     selisih: 7
   },
   musnad_2: {
@@ -108,7 +108,7 @@ const dataKitab = {
     baseFolder: "images/Musnad_Imam_Syafii_Jilid_2/",
     fileAwal: "Musnad Imam Syafii - Jilid 2 - Said Muhammad Al",
     total: 300, // GANTI SESUAI TOTAL ASLI NANTI
-    json: "daftar-isi-jilid2.json",
+    json: "daftar_isi_jilid2.json",
     selisih: 0
   }
 };
