@@ -248,12 +248,9 @@ function gantiMode(m){
 function lompatKeBabMuwatha(kitabNo, babNo, halCetak){
   const kitab = dataKitab[kitabAktif];
   const selisih = kitab.selisih;
-  let dataDaftar = daftarIsi.find(k => k.kitab_no === kitabNo);
-  let indexBab = dataDaftar.bab.findIndex(b => b.no === babNo);
-  let halBerikutnya = dataDaftar.bab[indexBab + 1]?.hal || kitab.total + selisih;
 
   noSekarang = halCetak + selisih;
-  batasAkhirModeBaca = halBerikutnya + selisih - 1;
+  batasAkhirModeBaca = kitab.total; // <-- INI KUNCINYA. Hapus batas bab
 
   gantiMode('baca');
   tampilkan();
@@ -284,8 +281,9 @@ function tampilkan(){
   document.getElementById('noSekarang').innerText = noSekarang;
   document.getElementById('infoLembar').innerHTML = `Lembar <span id="noSekarang">${noSekarang}</span> / ${kitab.total}`;
 
+  // FIX DISINI: Cek ke kitab.total bukan batasAkhirModeBaca
   document.getElementById('btnPrev').disabled = noSekarang <= 1;
-  document.getElementById('btnNext').disabled = noSekarang >= batasAkhirModeBaca; // aktifin batas bab lagi
+  document.getElementById('btnNext').disabled = noSekarang >= kitab.total;
 
   document.getElementById('inputLompat').max = kitab.total;
   document.getElementById('inputLompat').placeholder = `Lompat ke lembar 1-${kitab.total}`;
@@ -310,7 +308,8 @@ function prevPage(){
 }
 
 function nextPage(){
-  if(noSekarang < batasAkhirModeBaca){
+  const kitab = dataKitab[kitabAktif];
+  if(noSekarang < kitab.total){ // <-- Ganti dari batasAkhirModeBaca ke kitab.total
     noSekarang++;
     tampilkan();
   }
