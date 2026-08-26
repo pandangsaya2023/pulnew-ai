@@ -99,7 +99,7 @@ const dataKitab = {
     baseFolder: "images/Kitab Al-Muwatha Imam Malik/",
     fileAwal: "Kitab Al-Muwattha - Imam Maliki",
     total: 576,
-    json: "daftar-isi-muwatha.json",
+    json: "daftar-isi-muwatha.json", // <-- isi file JSON yg barusan kamu kirim
     selisih: 18
   },
   musnad_1: {
@@ -107,7 +107,7 @@ const dataKitab = {
     baseFolder: "images/Musnad_Imam_Syafii_Jilid_1/",
     fileAwal: "Musnad_Imam_Syafii_Jilid_1",
     total: 627,
-    json: "daftar-isi-musnad-1.json",
+    json: "daftar-isi-musnad-1.json", // <-- isi file JSON musnad yg kamu kirim
     selisih: 7
   },
   musnad_2: {
@@ -124,7 +124,7 @@ let kitabAktif = "muwatha";
 let noSekarang = 1;
 let daftarIsi = [];
 let mode = 'baca';
-let batasAkhirModeBaca = 9999; // VARIABEL BARU UNTUK BATAS BAB
+let batasAkhirModeBaca = 9999;
 
 function getFolderMuwatha(hal) {
     if(hal <= 90) return "1-90/";
@@ -149,16 +149,15 @@ async function loadDaftarIsi(){
   const kitab = dataKitab[kitabAktif];
   try {
     const res = await fetch(kitab.json);
-    const data = await res.json(); // <-- tampung dulu ke data
+    const data = await res.json();
     const daftarDiv = document.getElementById('daftarIsiList');
     daftarDiv.innerHTML = "";
 
-    // CEK FORMAT JSON: format muwatha atau format musnad
-    if(Array.isArray(data)){ // Format muwatha: langsung array
+    if(Array.isArray(data)){ // FORMAT MUWATHA
       daftarIsi = data;
       renderFormatMuwatha(daftarDiv);
     }
-    else if(data.daftar_isi){ // Format musnad: ada key daftar_isi
+    else if(data.daftar_isi){ // FORMAT MUSNAD
       daftarIsi = data.daftar_isi;
       renderFormatMusnad(daftarDiv, data.judul);
     }
@@ -168,35 +167,40 @@ async function loadDaftarIsi(){
 
   } catch(e){
     console.error('Gagal load daftar isi: ' + kitab.json, e);
-    document.getElementById('daftarIsiList').innerHTML = `<p style="text-align:center; color:red;">Gagal load daftar isi: ${kitab.json}</p>`;
+    document.getElementById('daftarIsiList').innerHTML = `<p style="text-align:center; color:red;">Gagal load: ${kitab.json}</p>`;
   }
 }
 
-// FUNGSI BARU UNTUK RENDER FORMAT MUWATHA
 function renderFormatMuwatha(daftarDiv){
   daftarIsi.forEach(kitabItem => {
     let kitabDiv = document.createElement('div');
     kitabDiv.className = 'daftar-kitab';
-    kitabDiv.innerHTML = `<h3>Kitab ${kitabItem.kitab_no}. ${kitabItem.nama}</h3>`;
 
-    kitabItem.bab.forEach(bab => {
-      let a = document.createElement('a');
-      a.className = 'daftar-bab';
-      a.innerHTML = `<span>Bab ${bab.no}. ${bab.judul}</span><span class="no-hal">Hal ${bab.hal}</span>`;
-      a.onclick = () => lompatKeBabFormatLama(kitabItem.kitab_no, bab.no, bab.hal);
-      kitabDiv.appendChild(a);
-    });
+    // Kalau ada bab, klik nama kitab = lompat ke hal_mulai
+    let headerHTML = `<h3>Kitab ${kitabItem.kitab_no}. ${kitabItem.nama}</h3>`;
+    if(kitabItem.bab.length === 0){
+      headerHTML = `<a class="daftar-bab" onclick="lompatKeBabMuwatha(${kitabItem.kitab_no}, 0, ${kitabItem.hal_mulai})"><span>Baca Kitab ${kitabItem.nama}</span><span class="no-hal">Hal ${kitabItem.hal_mulai}</span></a>`;
+    }
+    kitabDiv.innerHTML = headerHTML;
+
+    if(kitabItem.bab.length > 0){
+      kitabItem.bab.forEach(bab => {
+        let a = document.createElement('a');
+        a.className = 'daftar-bab';
+        a.innerHTML = `<span>Bab ${bab.no}. ${bab.judul}</span><span class="no-hal">Hal ${bab.hal}</span>`;
+        a.onclick = () => lompatKeBabMuwatha(kitabItem.kitab_no, bab.no, bab.hal);
+        kitabDiv.appendChild(a);
+      });
+    }
     daftarDiv.appendChild(kitabDiv);
   });
 }
 
-// FUNGSI BARU UNTUK RENDER FORMAT MUSNAD
 function renderFormatMusnad(daftarDiv, judulKitab){
   let kitabDiv = document.createElement('div');
   kitabDiv.className = 'daftar-kitab';
   kitabDiv.innerHTML = `<h3>${judulKitab}</h3>`;
 
-  // Kelompokkan berdasarkan kategori
   const kategori = {};
   daftarIsi.forEach(item => {
     if(!kategori[item.kategori]) kategori[item.kategori] = [];
@@ -205,7 +209,7 @@ function renderFormatMusnad(daftarDiv, judulKitab){
 
   for(const kat in kategori){
     let h4 = document.createElement('h4');
-    h4.style = "margin:10px 0 5px 0; color:var(--hijau-tua); font-size:14px;";
+    h4.style = "margin:10px 0 5px 0; color:var(--hijau-tua); font-size:14px; font-weight:700;";
     h4.innerText = kat;
     kitabDiv.appendChild(h4);
 
@@ -213,63 +217,75 @@ function renderFormatMusnad(daftarDiv, judulKitab){
       let a = document.createElement('a');
       a.className = 'daftar-bab';
       a.innerHTML = `<span>${bab.no}. ${bab.bab}</span><span class="no-hal">Hal ${bab.halaman}</span>`;
-      a.onclick = () => lompatKeBabFormatBaru(bab.halaman);
+      a.onclick = () => lompatKeBabMusnad(bab.halaman);
       kitabDiv.appendChild(a);
     });
   }
   daftarDiv.appendChild(kitabDiv);
 }
 
-// FUNGSI LOMPAT BARU UNTUK FORMAT MUSNAD
-function lompatKeBabFormatBaru(halCetak){
-  const kitab = dataKitab[kitabAktif];
-  const selisih = kitab.selisih;
-  noSekarang = halCetak + selisih;
-  batasAkhirModeBaca = kitab.total; // musnad gak ada batas per bab
-  gantiMode('baca');
-  tampilkan();
-  window.scrollTo(0,0);
+function gantiMode(m){
+  mode = m;
+  document.getElementById('btnModeBaca').classList.remove('active');
+  document.getElementById('btnModeDaftar').classList.remove('active');
+  if(m === 'baca'){
+    document.getElementById('btnModeBaca').classList.add('active');
+    document.getElementById('panelKontrol').style.display = 'block';
+    document.getElementById('daftarIsiList').style.display = 'none';
+    document.getElementById('hasil').style.display = 'flex';
+    document.getElementById('navWrap').style.display = 'flex';
+    document.getElementById('infoLembar').style.display = 'block';
+  } else {
+    document.getElementById('btnModeDaftar').classList.add('active');
+    document.getElementById('panelKontrol').style.display = 'none';
+    document.getElementById('daftarIsiList').style.display = 'block';
+    document.getElementById('hasil').style.display = 'none';
+    document.getElementById('navWrap').style.display = 'none';
+    document.getElementById('infoLembar').style.display = 'none';
+  }
 }
 
-// UBAH JUGA FUNGSI LAMA BIAR GAK TABRAKAN
-function lompatKeBab(kitabNo, babNo, halCetak){ // ini khusus muwatha
+function lompatKeBabMuwatha(kitabNo, babNo, halCetak){
   const kitab = dataKitab[kitabAktif];
   const selisih = kitab.selisih;
   let dataDaftar = daftarIsi.find(k => k.kitab_no === kitabNo);
   let indexBab = dataDaftar.bab.findIndex(b => b.no === babNo);
   let halBerikutnya = dataDaftar.bab[indexBab + 1]?.hal || kitab.total + selisih;
+
   noSekarang = halCetak + selisih;
   batasAkhirModeBaca = halBerikutnya + selisih - 1;
+
   gantiMode('baca');
   tampilkan();
   window.scrollTo(0,0);
-  }
+}
+
+function lompatKeBabMusnad(halCetak){
+  const kitab = dataKitab[kitabAktif];
+  const selisih = kitab.selisih;
+  noSekarang = halCetak + selisih;
+  batasAkhirModeBaca = kitab.total;
+
+  gantiMode('baca');
+  tampilkan();
+  window.scrollTo(0,0);
+}
 
 function tampilkan(){
   const kitab = dataKitab[kitabAktif];
   let nomorFile = noSekarang;
-
   let namaFile = `${kitab.fileAwal}_${nomorFile}.jpg`;
   let folder = kitab.baseFolder;
-
-  if(kitabAktif === 'muwatha') {
-      folder += getFolderMuwatha(nomorFile);
-  }
+  if(kitabAktif === 'muwatha') { folder += getFolderMuwatha(nomorFile); }
 
   const urlAman = folder + encodeURIComponent(namaFile);
-
   document.getElementById('gambar').src = urlAman;
   document.getElementById('gambar').alt = `Lembar ${noSekarang}`;
   document.getElementById('noSekarang').innerText = noSekarang;
   document.getElementById('infoLembar').innerHTML = `Lembar <span id="noSekarang">${noSekarang}</span> / ${kitab.total}`;
 
-  // BIAR TOMBOL SELALU AKTIF GAK ADA BATAS
-  document.getElementById('btnPrev').disabled = false;
-  document.getElementById('btnNext').disabled = false;
-  
-  // TOMBOL ADA BATASNYA IKUT BATAS BAB KALAU DARI DAFTAR ISI
-  //document.getElementById('btnPrev').disabled = noSekarang === 1;
-  //document.getElementById('btnNext').disabled = noSekarang >= batasAkhirModeBaca;
+  document.getElementById('btnPrev').disabled = noSekarang <= 1;
+  document.getElementById('btnNext').disabled = noSekarang >= batasAkhirModeBaca; // aktifin batas bab lagi
 
   document.getElementById('inputLompat').max = kitab.total;
   document.getElementById('inputLompat').placeholder = `Lompat ke lembar 1-${kitab.total}`;
@@ -280,7 +296,7 @@ function lompatHalaman(){
   let no = parseInt(document.getElementById('inputLompat').value);
   if(no >= 1 && no <= kitab.total){
     noSekarang = no;
-    batasAkhirModeBaca = kitab.total; // reset batas kalau lompat manual
+    batasAkhirModeBaca = kitab.total;
     tampilkan();
   }
   else { alert(`Masukkan nomor 1 - ${kitab.total}`); }
@@ -294,8 +310,7 @@ function prevPage(){
 }
 
 function nextPage(){
-  const kitab = dataKitab[kitabAktif];
-  if(noSekarang <  kitab.total){ //batasAkhirModeBaca){
+  if(noSekarang < batasAkhirModeBaca){
     noSekarang++;
     tampilkan();
   }
