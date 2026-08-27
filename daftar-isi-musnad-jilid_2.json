@@ -1,0 +1,282 @@
+{
+  "kitab": "Musnad Imam Syafi'i",
+  "jilid": 2,
+  "sumber_halaman": ["xi", "xii"],
+  "daftar_bab": [
+    {
+      "id": 1,
+      "judul": "Bagian dari Pembahasan tentang Perbedaan Hadits dan yang Ditinggalkan oleh Mu'adz",
+      "halaman": 1
+    },
+    {
+      "id": 2,
+      "judul": "Bagian dari Jus Ke Dua; Perbedaan Hadits dari Al Ashlul Atiq",
+      "halaman": 42
+    },
+    {
+      "id": 3,
+      "judul": "Bagian dari Pembahasan tentang Talak",
+      "halaman": 145
+    },
+    {
+      "id": 4,
+      "judul": "Bagian dari Pembahasan tentang Pembebasan Budak",
+      "halaman": 152
+    },
+    {
+      "id": 5,
+      "judul": "Bagian dari Pembahasan tentang Melukai Dengan Sengaja",
+      "halaman": 162
+    },
+    {
+      "id": 6,
+      "judul": "Bagian dari Pembahasan tentang Budak Mukatab",
+      "halaman": 195
+    },
+    {
+      "id": 7,
+      "judul": "Bagian dari Pembahasan tentang Jizyah",
+      "halaman": 197
+    },
+    {
+      "id": 8,
+      "judul": "Bagian dari Pembahasan tentang Perbedaan Malik dan Asy-Syafi'i RA",
+      "halaman": 208
+    },
+    {
+      "id": 9,
+      "judul": "Bagian dari Pembahasan tentang Risalah Kecuali Riwayat dari Muadz",
+      "halaman": 290
+    },
+    {
+      "id": 10,
+      "judul": "Bagian dari Pembahasan tentang Mahar dan Ila'",
+      "halaman": 339
+    },
+    {
+      "id": 11,
+      "judul": "Bagian dari Pembahasan tentang Penukaran",
+      "halaman": 350
+    },
+    {
+      "id": 12,
+      "judul": "Bagian dari Pembahasan tentang Rahn dan Ijarah",
+      "halaman": 352
+    },
+    {
+      "id": 13,
+      "judul": "Bagian dari Pembahasan tentang Syighar",
+      "halaman": 359
+    },
+    {
+      "id": 14,
+      "judul": "Bagian dari Pembahasan tentang Zhihar dan Li'an",
+      "halaman": 367
+    },
+    {
+      "id": 15,
+      "judul": "Bagian dari Pembahasan tentang Khulu' dan Nusyuz",
+      "halaman": 379
+    },
+    {
+      "id": 16,
+      "judul": "Bagian dari Pembahasan tentang Membatalkan Kebaikan",
+      "halaman": 390
+    },
+    {
+      "id": 17,
+      "judul": "Bagian dari Pembahasan tentang Hukum Al Qur'an",
+      "halaman": 394
+    },
+    {
+      "id": 18,
+      "judul": "Bagian dari Pembahasan tentang Minuman dan Keutamaan Quraisy dan yang Lainnya",
+      "halaman": 437
+    },
+    {
+      "id": 19,
+      "judul": "Bagian dari Pembahasan tentang Minuman",
+      "halaman": 446
+    },
+    {
+      "id": 20,
+      "judul": "Bagian dari Pembahasan tentang Menggauli Wanita",
+      "halaman": 469
+    },
+    {
+      "id": 21,
+      "judul": "Bagian dari Pembahasan tentang Mengungkapkan Redaksi Pelamaran",
+      "halaman": 481
+    },
+    {
+      "id": 22,
+      "judul": "Bagian dari Pembahasan tentang Talak dan Ruju'",
+      "halaman": 484
+    },
+    {
+      "id": 23,
+      "judul": "Bagian dari Pembahasan tentang Hitungan",
+      "halaman": 492
+    },
+    {
+      "id": 24,
+      "judul": "Bagian dari Pembahasan tentang Undian dan Nafkah Kerabat",
+      "halaman": 521
+    },
+    {
+      "id": 25,
+      "judul": "Bagian dari Pembahasan tentang Persesusuan",
+      "halaman": 523
+    },
+    {
+      "id": 26,
+      "judul": "Bagian dari Pembahasan tentang Dzikir Kepada Allah Tanpa Berwudhu dan Dalam Keadaan Haidh",
+      "halaman": 535
+    },
+    {
+      "id": 27,
+      "judul": "Bagian dari Pembahasan tentang Memerangi Pelaku Pemberontakan",
+      "halaman": 543
+    },
+    {
+      "id": 28,
+      "judul": "Bagian dari Pembahasan tentang Memerangi Kaum Musyrikin",
+      "halaman": 545
+    },
+    {
+      "id": 29,
+      "judul": "Bagian dari Pembahasan tentang Tawanan Curang Dalam Harta Rampasan Perang dan Lainnya",
+      "halaman": 551
+    },
+    {
+      "id": 30,
+      "judul": "Bagian dari Pembahasan tentang Pembagian Harta Rampasan Perang",
+      "halaman": 570
+    },
+    {
+      "id": 31,
+      "judul": "Bagian dari Pembahasan tentang Sifat Karakteristik Larangan Nabi SAW dan Pembahasan tentang Budak Mudabbar",
+      "halaman": 585
+    },
+    {
+      "id": 32,
+      "judul": "Bagian dari Pembahasan tentang Bangkrut",
+      "halaman": 591
+    },
+    {
+      "id": 33,
+      "judul": "Bagian dari Pembahasan tentang Dakwaan dan Bukti-Bukti",
+      "halaman": 594
+    },
+    {
+      "id": 34,
+      "judul": "Bagian dari Pembahasan tentang Sifat Perintah Nabi SAW, Perwalian Anak Kecil dan Kesalahan Thabib Serta yang Lainnya",
+      "halaman": 598
+    },
+    {
+      "id": 35,
+      "judul": "Bagian dari Pembahasan tentang Muzara'ah dan Al Kara'",
+      "halaman": 600
+    },
+    {
+      "id": 36,
+      "judul": "Bagian dari Pembahasan tentang Potong Tangan Karena Pencurian dan Bab-Bab yang Lainnya",
+      "halaman": 602
+    },
+    {
+      "id": 37,
+      "judul": "Bagian dari Pembahasan tentang Al Bbahirah dan As-Sa'ibah",
+      "halaman": 615
+    },
+    {
+      "id": 38,
+      "judul": "Bagian dari Pembahasan tentang Berburu dan Menyembelih Hewan",
+      "halaman": 621
+    },
+    {
+      "id": 39,
+      "judul": "Bagian dari Pembahasan tentang Diyat dan Qishash",
+      "halaman": 621
+    },
+    {
+      "id": 40,
+      "judul": "Bagian dari Pembahasan tentang Jirah Al Khatha'",
+      "halaman": 643
+    },
+    {
+      "id": 41,
+      "judul": "Bagian dari Pembahasan tentang Adu Cepat, Sumpah, Melempar Anak Panah dan Gerhana",
+      "halaman": 649
+    },
+    {
+      "id": 42,
+      "judul": "Bagian dari Pembahasan tentang Gerhana",
+      "halaman": 654
+    },
+    {
+      "id": 43,
+      "judul": "Bagian dari Pembahasan tentang Kafarat, Nadzar dan Sumpah",
+      "halaman": 657
+    },
+    {
+      "id": 44,
+      "judul": "Bagian dari Pembahasan tentang Perjalanan Perang",
+      "halaman": 659
+    },
+    {
+      "id": 45,
+      "judul": "Bagian dari Pembahasan tentang Kumpulan Ilmu",
+      "halaman": 664
+    },
+    {
+      "id": 46,
+      "judul": "Bagian dari Pembahasan tentang Jenazah dan Hudud",
+      "halaman": 666
+    },
+    {
+      "id": 47,
+      "judul": "Bagian dari Pembahasan tentang Haji",
+      "halaman": 695
+    },
+    {
+      "id": 48,
+      "judul": "Bagian dari Pembahasan tentang Ringkasan Haji Akbar",
+      "halaman": 722
+    },
+    {
+      "id": 49,
+      "judul": "Bagian dari Pembahasan tentang Nikah Karena Takut Miskin",
+      "halaman": 732
+    },
+    {
+      "id": 50,
+      "judul": "Bagian dari Pembahasan tentang Nikah",
+      "halaman": 736
+    },
+    {
+      "id": 51,
+      "judul": "Bagian dari Pembahasan tentang Wasiat yang Belum Pernah Didengar Darinya",
+      "halaman": 738
+    },
+    {
+      "id": 52,
+      "judul": "Bagian dari Pembahasan tentang Adab Seorang Hakim",
+      "halaman": 741
+    },
+    {
+      "id": 53,
+      "judul": "Bagian dari Pembahasan tentang Makanan, Minuman dan Memakmurkan Bumi",
+      "halaman": 746
+    },
+    {
+      "id": 54,
+      "judul": "Bagian dari Pembahasan tentang Wasiat yang Belum Pernah Didengar dari Imam Asy-Syafi'i RA",
+      "halaman": 760
+    },
+    {
+      "id": 55,
+      "judul": "Bagian dari Pembahasan tentang Perbedaan Ali dan Abdullah Tentang Hal-hal yang tidak Didengar oleh Ar-Rabi' dari Asy-Syafi'i",
+      "halaman": 763
+    }
+  ]
+}
