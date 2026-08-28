@@ -210,7 +210,7 @@ function renderFormatMusnad(daftarDiv, judulKitab){
   kitabDiv.className = 'daftar-kitab';
   kitabDiv.innerHTML = `<h3>${judulKitab}</h3>`;
 
-  /*const kategori = {};
+  const kategori = {};
   daftarIsi.forEach(item => {
     if(!kategori[item.kategori]) kategori[item.kategori] = [];
     kategori[item.kategori].push(item);
@@ -229,7 +229,7 @@ function renderFormatMusnad(daftarDiv, judulKitab){
       a.onclick = () => lompatKeBabMusnad(bab.halaman);
       kitabDiv.appendChild(a);
     });
-  }*/
+  }
   daftarDiv.appendChild(kitabDiv);
 }
 
