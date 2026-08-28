@@ -1,0 +1,337 @@
+{
+  "judul": "Musnad Imam Syafii Jilid 2",
+  "total_halaman": 763,
+  "total_bab": 55,
+  "daftar_isi": [
+    {
+      "no": 1,
+      "kategori": "Hadits & Ushul",
+      "bab": "Bagian dari Pembahasan tentang Perbedaan Hadits dan yang Ditinggalkan oleh Mu'adz",
+      "halaman": 1
+    },
+    {
+      "no": 2,
+      "kategori": "Hadits & Ushul",
+      "bab": "Bagian dari Jus Ke Dua; Perbedaan Hadits dari Al Ashlul Atiq",
+      "halaman": 42
+    },
+    {
+      "no": 3,
+      "kategori": "Fiqih Keluarga",
+      "bab": "Bagian dari Pembahasan tentang Talak",
+      "halaman": 145
+    },
+    {
+      "no": 4,
+      "kategori": "Fiqih Muamalah",
+      "bab": "Bagian dari Pembahasan tentang Pembebasan Budak",
+      "halaman": 152
+    },
+    {
+      "no": 5,
+      "kategori": "Fiqih Jinayat",
+      "bab": "Bagian dari Pembahasan tentang Melukai Dengan Sengaja",
+      "halaman": 162
+    },
+    {
+      "no": 6,
+      "kategori": "Fiqih Muamalah",
+      "bab": "Bagian dari Pembahasan tentang Budak Mukatab",
+      "halaman": 195
+    },
+    {
+      "no": 7,
+      "kategori": "Fiqih Siyasah",
+      "bab": "Bagian dari Pembahasan tentang Jizyah",
+      "halaman": 197
+    },
+    {
+      "no": 8,
+      "kategori": "Khilafiyah",
+      "bab": "Bagian dari Pembahasan tentang Perbedaan Malik dan Asy-Syafi'i RA",
+      "halaman": 208
+    },
+    {
+      "no": 9,
+      "kategori": "Hadits & Ushul",
+      "bab": "Bagian dari Pembahasan tentang Risalah Kecuali Riwayat dari Muadz",
+      "halaman": 290
+    },
+    {
+      "no": 10,
+      "kategori": "Fiqih Keluarga",
+      "bab": "Bagian dari Pembahasan tentang Mahar dan Ila'",
+      "halaman": 339
+    },
+    {
+      "no": 11,
+      "kategori": "Fiqih Muamalah",
+      "bab": "Bagian dari Pembahasan tentang Penukaran",
+      "halaman": 350
+    },
+    {
+      "no": 12,
+      "kategori": "Fiqih Muamalah",
+      "bab": "Bagian dari Pembahasan tentang Rahn dan Ijarah",
+      "halaman": 352
+    },
+    {
+      "no": 13,
+      "kategori": "Fiqih Keluarga",
+      "bab": "Bagian dari Pembahasan tentang Syighar",
+      "halaman": 359
+    },
+    {
+      "no": 14,
+      "kategori": "Fiqih Keluarga",
+      "bab": "Bagian dari Pembahasan tentang Zhihar dan Li'an",
+      "halaman": 367
+    },
+    {
+      "no": 15,
+      "kategori": "Fiqih Keluarga",
+      "bab": "Bagian dari Pembahasan tentang Khulu' dan Nusyuz",
+      "halaman": 379
+    },
+    {
+      "no": 16,
+      "kategori": "Adab",
+      "bab": "Bagian dari Pembahasan tentang Membatalkan Kebaikan",
+      "halaman": 390
+    },
+    {
+      "no": 17,
+      "kategori": "Ushul Fiqih",
+      "bab": "Bagian dari Pembahasan tentang Hukum Al Qur'an",
+      "halaman": 394
+    },
+    {
+      "no": 18,
+      "kategori": "Fiqih",
+      "bab": "Bagian dari Pembahasan tentang Minuman dan Keutamaan Quraisy dan yang Lainnya",
+      "halaman": 437
+    },
+    {
+      "no": 19,
+      "kategori": "Fiqih",
+      "bab": "Bagian dari Pembahasan tentang Minuman",
+      "halaman": 446
+    },
+    {
+      "no": 20,
+      "kategori": "Fiqih Keluarga",
+      "bab": "Bagian dari Pembahasan tentang Menggauli Wanita",
+      "halaman": 469
+    },
+    {
+      "no": 21,
+      "kategori": "Fiqih Keluarga",
+      "bab": "Bagian dari Pembahasan tentang Mengungkapkan Redaksi Pelamaran",
+      "halaman": 481
+    },
+    {
+      "no": 22,
+      "kategori": "Fiqih Keluarga",
+      "bab": "Bagian dari Pembahasan tentang Talak dan Ruju'",
+      "halaman": 484
+    },
+    {
+      "no": 23,
+      "kategori": "Fiqih Muamalah",
+      "bab": "Bagian dari Pembahasan tentang Hitungan",
+      "halaman": 492
+    },
+    {
+      "no": 24,
+      "kategori": "Fiqih Muamalah",
+      "bab": "Bagian dari Pembahasan tentang Undian dan Nafkah Kerabat",
+      "halaman": 521
+    },
+    {
+      "no": 25,
+      "kategori": "Fiqih Keluarga",
+      "bab": "Bagian dari Pembahasan tentang Persesusuan",
+      "halaman": 523
+    },
+    {
+      "no": 26,
+      "kategori": "Ibadah",
+      "bab": "Bagian dari Pembahasan tentang Dzikir Kepada Allah Tanpa Berwudhu dan Dalam Keadaan Haidh",
+      "halaman": 535
+    },
+    {
+      "no": 27,
+      "kategori": "Fiqih Siyasah",
+      "bab": "Bagian dari Pembahasan tentang Memerangi Pelaku Pemberontakan",
+      "halaman": 543
+    },
+    {
+      "no": 28,
+      "kategori": "Fiqih Siyasah",
+      "bab": "Bagian dari Pembahasan tentang Memerangi Kaum Musyrikin",
+      "halaman": 545
+    },
+    {
+      "no": 29,
+      "kategori": "Fiqih Siyasah",
+      "bab": "Bagian dari Pembahasan tentang Tawanan Curang Dalam Harta Rampasan Perang dan Lainnya",
+      "halaman": 551
+    },
+    {
+      "no": 30,
+      "kategori": "Fiqih Siyasah",
+      "bab": "Bagian dari Pembahasan tentang Pembagian Harta Rampasan Perang",
+      "halaman": 570
+    },
+    {
+      "no": 31,
+      "kategori": "Fiqih Muamalah",
+      "bab": "Bagian dari Pembahasan tentang Sifat Karakteristik Larangan Nabi SAW dan Pembahasan tentang Budak Mudabbar",
+      "halaman": 585
+    },
+    {
+      "no": 32,
+      "kategori": "Fiqih Muamalah",
+      "bab": "Bagian dari Pembahasan tentang Bangkrut",
+      "halaman": 591
+    },
+    {
+      "no": 33,
+      "kategori": "Fiqih Qadha",
+      "bab": "Bagian dari Pembahasan tentang Dakwaan dan Bukti-Bukti",
+      "halaman": 594
+    },
+    {
+      "no": 34,
+      "kategori": "Fiqih",
+      "bab": "Bagian dari Pembahasan tentang Sifat Perintah Nabi SAW, Perwalian Anak Kecil dan Kesalahan Thabib Serta yang Lainnya",
+      "halaman": 598
+    },
+    {
+      "no": 35,
+      "kategori": "Fiqih Muamalah",
+      "bab": "Bagian dari Pembahasan tentang Muzara'ah dan Al Kara'",
+      "halaman": 600
+    },
+    {
+      "no": 36,
+      "kategori": "Fiqih Jinayat",
+      "bab": "Bagian dari Pembahasan tentang Potong Tangan Karena Pencurian dan Bab-Bab yang Lainnya",
+      "halaman": 602
+    },
+    {
+      "no": 37,
+      "kategori": "Fiqih",
+      "bab": "Bagian dari Pembahasan tentang Al Bbahirah dan As-Sa'ibah",
+      "halaman": 615
+    },
+    {
+      "no": 38,
+      "kategori": "Fiqih",
+      "bab": "Bagian dari Pembahasan tentang Berburu dan Menyembelih Hewan",
+      "halaman": 621
+    },
+    {
+      "no": 39,
+      "kategori": "Fiqih Jinayat",
+      "bab": "Bagian dari Pembahasan tentang Diyat dan Qishash",
+      "halaman": 621
+    },
+    {
+      "no": 40,
+      "kategori": "Fiqih Jinayat",
+      "bab": "Bagian dari Pembahasan tentang Jirah Al Khatha'",
+      "halaman": 643
+    },
+    {
+      "no": 41,
+      "kategori": "Fiqih",
+      "bab": "Bagian dari Pembahasan tentang Adu Cepat, Sumpah, Melempar Anak Panah dan Gerhana",
+      "halaman": 649
+    },
+    {
+      "no": 42,
+      "kategori": "Ibadah",
+      "bab": "Bagian dari Pembahasan tentang Gerhana",
+      "halaman": 654
+    },
+    {
+      "no": 43,
+      "kategori": "Fiqih",
+      "bab": "Bagian dari Pembahasan tentang Kafarat, Nadzar dan Sumpah",
+      "halaman": 657
+    },
+    {
+      "no": 44,
+      "kategori": "Fiqih Siyasah",
+      "bab": "Bagian dari Pembahasan tentang Perjalanan Perang",
+      "halaman": 659
+    },
+    {
+      "no": 45,
+      "kategori": "Ilmu",
+      "bab": "Bagian dari Pembahasan tentang Kumpulan Ilmu",
+      "halaman": 664
+    },
+    {
+      "no": 46,
+      "kategori": "Fiqih",
+      "bab": "Bagian dari Pembahasan tentang Jenazah dan Hudud",
+      "halaman": 666
+    },
+    {
+      "no": 47,
+      "kategori": "Ibadah",
+      "bab": "Bagian dari Pembahasan tentang Haji",
+      "halaman": 695
+    },
+    {
+      "no": 48,
+      "kategori": "Ibadah",
+      "bab": "Bagian dari Pembahasan tentang Ringkasan Haji Akbar",
+      "halaman": 722
+    },
+    {
+      "no": 49,
+      "kategori": "Fiqih Keluarga",
+      "bab": "Bagian dari Pembahasan tentang Nikah Karena Takut Miskin",
+      "halaman": 732
+    },
+    {
+      "no": 50,
+      "kategori": "Fiqih Keluarga",
+      "bab": "Bagian dari Pembahasan tentang Nikah",
+      "halaman": 736
+    },
+    {
+      "no": 51,
+      "kategori": "Fiqih Muamalah",
+      "bab": "Bagian dari Pembahasan tentang Wasiat yang Belum Pernah Didengar Darinya",
+      "halaman": 738
+    },
+    {
+      "no": 52,
+      "kategori": "Fiqih Qadha",
+      "bab": "Bagian dari Pembahasan tentang Adab Seorang Hakim",
+      "halaman": 741
+    },
+    {
+      "no": 53,
+      "kategori": "Fiqih",
+      "bab": "Bagian dari Pembahasan tentang Makanan, Minuman dan Memakmurkan Bumi",
+      "halaman": 746
+    },
+    {
+      "no": 54,
+      "kategori": "Fiqih Muamalah",
+      "bab": "Bagian dari Pembahasan tentang Wasiat yang Belum Pernah Didengar dari Imam Asy-Syafi'i RA",
+      "halaman": 760
+    },
+    {
+      "no": 55,
+      "kategori": "Khilafiyah",
+      "bab": "Bagian dari Pembahasan tentang Perbedaan Ali dan Abdullah Tentang Hal-hal yang tidak Didengar oleh Ar-Rabi' dari Asy-Syafi'i",
+      "halaman": 763
+    }
+  ]
+}
