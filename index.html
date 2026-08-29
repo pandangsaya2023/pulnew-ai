@@ -204,7 +204,7 @@ function renderFormatMuwatha(daftarDiv){
     daftarDiv.appendChild(kitabDiv);
   });
 }
-
+/* == Daftar Isi dengan Kategori == */
 /*function renderFormatMusnad(daftarDiv, judulKitab){
   let kitabDiv = document.createElement('div');
   kitabDiv.className = 'daftar-kitab';
@@ -232,6 +232,25 @@ function renderFormatMuwatha(daftarDiv){
   }
   daftarDiv.appendChild(kitabDiv);
 }*/
+
+/* === Tanpa kategori == */
+function renderFormatMusnad(daftarDiv, judulKitab){
+  let kitabDiv = document.createElement('div');
+  kitabDiv.className = 'daftar-kitab';
+  kitabDiv.innerHTML = `<h3>${judulKitab}</h3>`;
+
+  // HAPUS SEMUA BAGIAN KATEGORI
+  // Langsung loop daftar_isi aja
+  daftarIsi.forEach(bab => {
+    let a = document.createElement('a');
+    a.className = 'daftar-bab';
+    a.innerHTML = `<span>${bab.no}. ${bab.bab}</span><span class="no-hal">Hal ${bab.halaman}</span>`;
+    a.onclick = () => lompatKeBabMusnad(bab.halaman);
+    kitabDiv.appendChild(a);
+  });
+  
+  daftarDiv.appendChild(kitabDiv);
+}
 
 function gantiMode(m){
   mode = m;
